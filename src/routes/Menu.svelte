@@ -29,10 +29,8 @@
 			>
 				Continue Game
 			</button>
-			<button class="menu-button--restart heading--medium" on:click={() => set('load')}>
-				Restart
-			</button>
-			<button class="menu-button--quit menu-button--action heading--medium"> Quit Game </button>
+			<button class="menu-button--restart heading--medium"> Restart </button>
+			<a class="menu-button--quit menu-button--action heading--medium" href="/"> Quit Game </a>
 		</form>
 	</section>
 {/if}
@@ -77,7 +75,8 @@
 	}
 
 	.menu a {
-		all: unset;
+		text-decoration: none;
+		color: unset;
 	}
 
 	.menu button,
@@ -88,6 +87,7 @@
 		padding: 1dvw;
 		text-transform: uppercase;
 		cursor: pointer;
+		text-align: center;
 	}
 
 	figure {

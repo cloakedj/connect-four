@@ -6,11 +6,16 @@
 	import { writable } from 'svelte/store';
 	import { navigating, page } from '$app/stores';
 	import Loading from './Loading.svelte';
+	import { afterNavigate } from '$app/navigation';
 
-	const gameState = $page.url.pathname === '/game' ? writable('play') : writable('load');
+	const gameState = writable('load');
 	setContext('gameState', {
 		set: (state: string) => ($gameState = state),
 		get: () => $gameState
+	});
+
+	afterNavigate(() => {
+		$gameState = $page.url.pathname === '/game' ? 'play' : 'load';
 	});
 </script>
 

@@ -91,6 +91,7 @@
 
 		&::before {
 			content: '';
+			visibility: hidden;
 			background: var(--turn-player-indicator);
 			background-repeat: no-repeat;
 			background-size: contain;
@@ -118,10 +119,13 @@
 			cursor: pointer;
 
 			&:hover {
-				--active-row: attr('data-column-index');
 				background: rgb(255, 255, 255, 0.2);
 			}
 		}
+	}
+
+	.hidden-board:has(.ring:hover)::before {
+		visibility: visible;
 	}
 	@media only screen and (min-width: 768px) {
 		.game-boards {
