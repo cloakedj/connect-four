@@ -48,9 +48,7 @@
 			grid-column-start: 2;
 			grid-row-start: 1;
 			inline-size: 40%;
-			margin-block-end: 2dvw;
-			margin-inline-start: 6%;
-			margin-inline-end: 6%;
+			margin-block-end: 4dvw;
 			flex-flow: row;
 			justify-content: center;
 			padding: 1dvw 2dvw 1dvw 2dvw;

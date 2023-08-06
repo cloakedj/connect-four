@@ -5,6 +5,13 @@
 	--white: #fff;
 	--red: #fd6687;
 	--yellow: #ffce67;
+	--board-ring-size: 64px;
+	--board-ring-column-gap: 24px;
+	--board-ring-row-gap: 20px;
+	--board-padding-uniform: 20px;
+	--board-padding-bottom: 60px;
+	--player-indicator-height: 26px;
+	--player-indicator-width: 32px;
 }
 
 * {

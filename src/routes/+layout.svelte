@@ -1,25 +1,30 @@
 <script lang="ts">
-	import Board from './Board.svelte';
 	import Menu from './Menu.svelte';
 	import '$styles/global.css';
 	import Nav from './Nav.svelte';
 	import { setContext } from 'svelte';
 	import { writable } from 'svelte/store';
+	import { navigating, page } from '$app/stores';
+	import Loading from './Loading.svelte';
 
-	const gameState = writable('start');
+	const gameState = $page.url.pathname === '/game' ? writable('play') : writable('load');
 	setContext('gameState', {
 		set: (state: string) => ($gameState = state),
 		get: () => $gameState
 	});
 </script>
 
+{#if $navigating}
+	<Loading />
+{/if}
+
+{#if $gameState === 'load' || $gameState === 'pause'}
+	<Menu />
+{/if}
+
 <main>
-	<slot />
 	<Nav />
-	{#if $gameState === 'start' || $gameState === 'pause'}
-		<Menu />
-	{/if}
-	<Board />
+	<slot />
 </main>
 
 <style>

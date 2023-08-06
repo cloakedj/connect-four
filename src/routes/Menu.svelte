@@ -4,18 +4,18 @@
 	const { get, set }: GameState = getContext('gameState');
 </script>
 
-{#if get() === 'start'}
+{#if get() === 'load'}
 	<section class="menu-container menu-container--start">
 		<form class="menu menu--start" on:submit|preventDefault>
 			<figure>
 				<img src="/images/logo.svg" alt="Connect four board game logo consisting of 4 discs" />
 			</figure>
-			<button class="menu-button--play menu-button--action" on:click={() => set('play')}>
+			<a class="menu-button--play menu-button--action" href="/game">
 				<h2 class="heading--medium">Play vs player</h2>
 				<figure>
 					<img src="/images/player-vs-player.svg" alt="2 smile emojis overlapping each other." />
 				</figure>
-			</button>
+			</a>
 			<button class="menu-button--rules heading--medium"> Game Rules </button>
 		</form>
 	</section>
@@ -29,7 +29,9 @@
 			>
 				Continue Game
 			</button>
-			<button class="menu-button--restart heading--medium"> Restart </button>
+			<button class="menu-button--restart heading--medium" on:click={() => set('load')}>
+				Restart
+			</button>
 			<button class="menu-button--quit menu-button--action heading--medium"> Quit Game </button>
 		</form>
 	</section>
@@ -74,7 +76,12 @@
 		}
 	}
 
-	.menu button {
+	.menu a {
+		all: unset;
+	}
+
+	.menu button,
+	.menu a {
 		border-radius: 20px;
 		border: 3px solid rgb(var(--block, 0, 0, 0));
 		box-shadow: 0px 10px 0px 0px rgb(var(--block, 0, 0, 0));
