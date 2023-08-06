@@ -1,0 +1,75 @@
+:root {
+	--dark-purple: #5c2dd5;
+	--purple: #7945ff;
+	--black: 0, 0, 0;
+	--white: #fff;
+	--red: #fd6687;
+	--yellow: #ffce67;
+}
+
+* {
+	box-sizing: border-box;
+	font-family: 'Space Grotesk';
+	font-feature-settings: 'clig' off, 'liga' off;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+	margin: 0;
+}
+
+p {
+	font-size: 16px;
+	font-style: normal;
+	font-weight: 500;
+	line-height: normal;
+}
+
+body {
+	all: unset;
+	display: grid;
+	place-items: center;
+	all: unset;
+	display: grid;
+	place-items: center;
+	block-size: 100dvh;
+	inline-size: 100dvw;
+	overflow-x: hidden;
+}
+
+.heading--medium {
+	font-size: 24px;
+	font-style: normal;
+	font-weight: 700;
+	line-height: normal;
+}
+
+.heading--large {
+	font-size: 56px;
+	font-style: normal;
+	font-weight: 700;
+	line-height: normal;
+}
+
+.heading--small {
+	font-size: 20px;
+	font-style: normal;
+	font-weight: 700;
+	line-height: normal;
+}
+
+.heading--xs {
+	font-size: 16px;
+	font-style: normal;
+	font-weight: 700;
+	line-height: normal;
+}
+
+@font-face {
+	font-family: 'Space Grotesk';
+	src: url('../fonts/SpaceGrotesk-VariableFont_wght.ttf');
+}
